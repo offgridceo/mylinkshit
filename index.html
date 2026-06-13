@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyLinkShit</title>
+    <style>
+        :root {
+            --bg-color: #050505;
+            --text-main: #ffffff;
+            --text-muted: #555555;
+            --border-color: #1a1a1a;
+            --hover-border: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Courier New', Courier, monospace; /* Change to your chosen system font */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 450px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .header h1 {
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        .links-wrapper {
+            display: flex;
+            flex-direction: column;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .link-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10px;
+            color: var(--text-muted);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.15s ease-in-out;
+        }
+
+        .link-item:hover {
+            color: var(--text-main);
+            background-color: #0b0b0b;
+            padding-left: 15px; /* Subtle mechanical shift */
+            border-bottom: 1px solid var(--hover-border);
+        }
+
+        .link-index {
+            font-size: 0.75rem;
+            margin-right: 15px;
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>OFFGRID</h1>
+            <p>// INDEX_</p>
+        </div>
+
+        <nav class="links-wrapper">
+            <a href="https://www.youtube.com/@offgridceo" class="link-item" target="_blank">
+                <span><span class="link-index">01/</span>MAIN YOUTUBE</span>
+                <span>-></span>
+            </a>
+            <a href="https://www.youtube.com/@itsred_bitch" class="link-item" target="_blank">
+                <span><span class="link-index">02/</span>MUSIC CHANNEL</span>
+                <span>-></span>
+            </a>
+            <a href="https://www.youtube.com/@tecuanilatam" class="link-item" target="_blank">
+                <span><span class="link-index">03/</span>LATAM CHANNEL</span>
+                <span>-></span>
+            </a>
+            <a href="https://www.instagram.com/offgridceo/" class="link-item" target="_blank">
+                <span><span class="link-index">04/</span>INSTAGRAM</span>
+                <span>-></span>
+            </a>
+            <a href="https://www.tiktok.com/@offgridceo" class="link-item" target="_blank">
+                <span><span class="link-index">05/</span>TIKTOK</span>
+                <span>-></span>
+            </a>
+            <a href="t.me/offgridceo" class="link-item" target="_blank">
+                <span><span class="link-index">06/</span>TELEGRAM</span>
+                <span>-></span>
+            </a>
+        </nav>
+
+        <div class="footer">
+            <p>© 2026. ALL RIGHTS RESERVED.</p>
+        </div>
+    </div>
+
+</body>
+</html>
