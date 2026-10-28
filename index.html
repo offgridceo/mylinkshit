@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyLinkShit</title>
+    <title>MYLINKSHIT // DIRECTORY</title>
     <style>
         :root {
-            --bg-color: #050505;
-            --text-main: #ffffff;
-            --text-muted: #555555;
-            --border-color: #1a1a1a;
-            --hover-border: #ffffff;
+            --bg-color: #070708;
+            --card-bg: #0e0f12;
+            --text-main: #f0f0f0;
+            --text-muted: #62666d;
+            --border-color: #1a1c23;
+            --accent-color: #d94d1a; /* Cold rust/amber accent */
+            --accent-glow: rgba(217, 77, 26, 0.15);
         }
 
         * {
@@ -22,76 +24,140 @@
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
-            font-family: 'Courier New', Courier, monospace; /* Change to your chosen system font */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "SF Pro Display", monospace;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 20px;
+            padding: 24px;
         }
 
         .container {
             width: 100%;
-            max-width: 450px;
+            max-width: 460px;
             display: flex;
             flex-direction: column;
         }
 
         .header {
-            margin-bottom: 40px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            margin-bottom: 32px;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 16px;
         }
 
         .header h1 {
-            font-size: 1.5rem;
-            font-weight: 900;
-            margin-bottom: 5px;
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text-main);
         }
 
         .header p {
             color: var(--text-muted);
-            font-size: 0.8rem;
+            font-size: 0.75rem;
+            font-family: monospace;
+            letter-spacing: 1px;
+            margin-top: 4px;
         }
 
         .links-wrapper {
             display: flex;
             flex-direction: column;
-            border-top: 1px solid var(--border-color);
+            gap: 12px;
         }
 
         .link-item {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            padding: 20px 10px;
-            color: var(--text-muted);
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            border-bottom: 1px solid var(--border-color);
-            transition: all 0.15s ease-in-out;
-        }
-
-        .link-item:hover {
+            justify-content: space-between;
+            padding: 18px 20px;
+            background-color: var(--card-bg);
             color: var(--text-main);
-            background-color: #0b0b0b;
-            padding-left: 15px; /* Subtle mechanical shift */
-            border-bottom: 1px solid var(--hover-border);
+            text-decoration: none;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
         }
 
-        .link-index {
-            font-size: 0.75rem;
-            margin-right: 15px;
+        .link-content {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            z-index: 1;
+        }
+
+        .icon {
+            width: 20px;
+            height: 20px;
+            fill: none;
+            stroke: var(--text-muted);
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: stroke 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .link-text {
+            font-family: monospace;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .arrow {
+            width: 16px;
+            height: 16px;
+            fill: none;
+            stroke: var(--text-muted);
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: all 0.2s ease;
+            z-index: 1;
+        }
+
+        /* Hover & Active States */
+        .link-item:hover {
+            border-color: var(--accent-color);
+            background-color: #12141a;
+            box-shadow: 0 4px 20px var(--accent-glow);
+            transform: translateY(-1px);
+        }
+
+        .link-item:hover .icon {
+            stroke: var(--accent-color);
+        }
+
+        .link-item:hover .arrow {
+            stroke: var(--text-main);
+            transform: translateX(4px);
         }
 
         .footer {
             margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: monospace;
             font-size: 0.7rem;
             color: var(--text-muted);
-            text-transform: uppercase;
             letter-spacing: 1px;
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 6px;
+            box-shadow: 0 0 8px var(--accent-color);
         }
     </style>
 </head>
@@ -99,39 +165,65 @@
 
     <div class="container">
         <div class="header">
-            <h1>MyLinks</h1>
-            <p>// INDEX_</p>
+            <h1>TECUANI</h1>
+            <p>// OFFGRID_NETWORK</p>
         </div>
 
         <nav class="links-wrapper">
-            <a href="https://www.youtube.com/@offgridceo" class="link-item" target="_blank">
-                <span><span class="link-index">01/</span>MAIN YOUTUBE</span>
-                <span>-></span>
+            <!-- 1. YOUTUBE -->
+            <a href="https://www.youtube.com/@prod.tekexe" class="link-item" target="_blank" rel="noopener">
+                <div class="link-content">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                        <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                    </svg>
+                    <span class="link-text">YOUTUBE</span>
+                </div>
+                <svg class="arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </a>
-            <a href="https://www.youtube.com/@itsred_bitch" class="link-item" target="_blank">
-                <span><span class="link-index">02/</span>MUSIC CHANNEL</span>
-                <span>-></span>
+
+            <!-- 2. PROD. WORLD ORDER (TELEGRAM) -->
+            <a href="https://t.me/prodworldorder" class="link-item" target="_blank" rel="noopener">
+                <div class="link-content">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                    <span class="link-text">PROD. WORLD ORDER</span>
+                </div>
+                <svg class="arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </a>
-            <a href="https://www.youtube.com/@tecuanilatam" class="link-item" target="_blank">
-                <span><span class="link-index">03/</span>LATAM CHANNEL</span>
-                <span>-></span>
+
+            <!-- 3. PERSONAL TELEGRAM -->
+            <a href="https://t.me/offgridceo" class="link-item" target="_blank" rel="noopener">
+                <div class="link-content">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <span class="link-text">OFFGRID CEO</span>
+                </div>
+                <svg class="arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </a>
-            <a href="https://www.instagram.com/offgridceo/" class="link-item" target="_blank">
-                <span><span class="link-index">04/</span>INSTAGRAM</span>
-                <span>-></span>
-            </a>
-            <a href="https://www.tiktok.com/@offgridceo" class="link-item" target="_blank">
-                <span><span class="link-index">05/</span>TIKTOK</span>
-                <span>-></span>
-            </a>
-            <a href="https://t.me/offgridceo" class="link-item" target="_blank">
-                <span><span class="link-index">06/</span>TELEGRAM</span>
-                <span>-></span>
+
+            <!-- 4. BUY ME A COFFEE -->
+            <a href="https://buymeacoffee.com/tecuani" class="link-item" target="_blank" rel="noopener">
+                <div class="link-content">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                        <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                        <line x1="6" y1="1" x2="6" y2="4"></line>
+                        <line x1="10" y1="1" x2="10" y2="4"></line>
+                        <line x1="14" y1="1" x2="14" y2="4"></line>
+                    </svg>
+                    <span class="link-text">SUPPORT / COFFEE</span>
+                </div>
+                <svg class="arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </a>
         </nav>
 
         <div class="footer">
-            <p>© 2026. ALL RIGHTS RESERVED.</p>
+            <span><span class="status-dot"></span>ONLINE</span>
+            <span>MYLINKSHIT // 2026</span>
         </div>
     </div>
 
